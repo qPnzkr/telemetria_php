@@ -13,6 +13,26 @@
 
         return $pacchetti_persi;
     }
+    /*
+    accetta un array di interi e restituisce i ping validi
+    */
+    function pacchettiValidi($ping_grezzi){
+
+        $ping_validi=[];
+
+        foreach( $ping_grezzi as $ping ){
+
+            if( $ping > 0 ){
+
+                array_push($ping_validi, $ping);
+
+            }
+
+        }
+
+        return $ping_validi;
+
+    }
 
     //elaorazione dei dati
 
