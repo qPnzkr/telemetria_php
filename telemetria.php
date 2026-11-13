@@ -121,8 +121,8 @@
             <?php for ( $i = 0; $i < count($ping_validi); $i++ ): ?>
 
                 <tr>
-                    <td> <?= $i+1 ?> </td>
-                    <td> <?= $ping_validi[$i]; ?> </td>
+                    <td> <?= $i+1 ?>                                            </td>
+                    <td> <?= $ping_validi[$i]; ?>                               </td>
                     <td> <?= $ping_validi[$i] >= 150 ? "CRITICO" : "NORMALE" ?> </td>
                 </tr>
 
