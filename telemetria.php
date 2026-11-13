@@ -52,6 +52,22 @@
         return round($media, 2);
 
     }
+    /*
+    accetta un array di interi e due interi per riferimento, non restituisce nulla.
+    */
+    function calcolaMinMax($ping_validi, &$min, &$max){
+
+        $min = $ping_validi[0];
+        $max = $ping_validi[0];
+
+        foreach( $ping_validi as $ping ){
+
+            if ( $ping > $max ) $max = $ping;
+            if ( $ping < $min ) $min = $ping;
+
+        }
+
+    }
 
     //elaorazione dei dati
 
@@ -62,6 +78,9 @@
     $ping_validi = pacchettiValidi($ping_grezzi);
 
     $tempo_media = calcolaTempoMedio($ping_validi);
+
+    $ping_massimo = 0;
+    $ping_minimo = 0;
 
 ?>
 
