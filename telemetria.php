@@ -82,6 +82,10 @@
     $ping_massimo = 0;
     $ping_minimo = 0;
 
+    $pacchetti_persi = contaPacchettiPersi($ping_grezzi);
+
+    calcolaMinMax($ping_validi, $ping_minimo, $ping_massimo);          
+
 ?>
 
 <!DOCTYPE html>
@@ -92,6 +96,19 @@
     <title>Document</title>
 </head>
 <body>
+    <!-- visualizzazione dei dati -->
+    <ul>
+
+      <li> Totale rilevazioni: <?php count($ping_grezzi); ?></li>
+      <li> Pacchetti validi:   <?= count($ping_validi)    ?></li>
+      <li> Pacchetti persi:    <?= $pacchetti_persi       ?></li>
+      <li> Media:              <?= $tempo_media           ?></li>
+      <li> Minimo:             <?= $ping_minimo           ?></li>
+      <li> Massimo:            <?= $ping_massimo          ?></li>
+    
+    </ul>
+
+    
     
 </body>
 </html>
