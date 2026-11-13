@@ -108,7 +108,28 @@
     
     </ul>
 
-    
+    <table>
+
+        <thead>
+            <tr>
+                <th> #         </th>
+                <th> ping (ms) </th>
+                <th> stato     </th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php for ( $i = 0; $i < count($ping_validi); $i++ ): ?>
+
+                <tr>
+                    <td> <?= $i+1 ?> </td>
+                    <td> <?= $ping_validi[$i]; ?> </td>
+                    <td> <?= $ping_validi[$i] >= 150 ? "CRITICO" : "NORMALE" ?> </td>
+                </tr>
+
+            <?php endfor; ?>
+        </tbody>
+
+    </table>
     
 </body>
 </html>
